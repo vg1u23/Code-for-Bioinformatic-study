@@ -43,3 +43,6 @@ esearch -db sra -query PRJNA916854 | efetch -format runinfo > PRJA916854.csv
 
 #move a document into a folder
 mv PRJA916854.csv /scratch/vg1u23/bioinfo_analysis
+
+#end qiime2 etc.
+conda deactivate
