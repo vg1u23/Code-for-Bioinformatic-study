@@ -46,3 +46,6 @@ mv PRJA916854.csv /scratch/vg1u23/bioinfo_analysis
 
 #end qiime2 etc.
 conda deactivate
+
+#check the environment for plugins
+conda info --env
