@@ -44,6 +44,9 @@ esearch -db sra -query PRJNA916854 | efetch -format runinfo > PRJA916854.csv
 #move a document into a folder
 mv PRJA916854.csv /scratch/vg1u23/bioinfo_analysis
 
+
+#Strategy: Use the edirect plugin for retrieving metadata, download the csv files and store them also in OneDrive, Get the SRP Number (study number) and retrieve the sequence data with pysradb.
+
 #end qiime2 etc.
 conda deactivate
 
