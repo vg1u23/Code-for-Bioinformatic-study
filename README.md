@@ -45,7 +45,7 @@ esearch -db sra -query PRJNA916854 | efetch -format runinfo > PRJA916854.csv
 mv PRJA916854.csv /scratch/vg1u23/bioinfo_analysis
 
 
-#Strategy: Use the edirect plugin for retrieving metadata, download the csv files and store them also in OneDrive, Get the SRP Number (study number) and retrieve the sequence data with pysradb.
+#Strategy: Use the edirect plugin for retrieving metadata, download the csv files (go into your scratch folder and use the download function) and store them also in OneDrive, get the SRP Number from the metadata files (study number) and retrieve the sequence data with pysradb. Store everything together in a folder. Check if the download worked and the file is not empty.
 
 #end qiime2 etc.
 conda deactivate
