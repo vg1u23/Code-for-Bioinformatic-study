@@ -56,5 +56,8 @@ rm -r "foldername"
 #end qiime2 etc.
 conda deactivate
 
+#check if the slurm file sbatch is running
+squeue -u "username"
+#R=running, PD=pending
 #check the environment for plugins
 conda info --env
