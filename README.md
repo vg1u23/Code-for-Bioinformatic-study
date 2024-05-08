@@ -61,3 +61,8 @@ squeue -u "username"
 #R=running, PD=pending
 #check the environment for plugins
 conda info --env
+
+#download metadata and raw sequences
+#donwload in scratch, save raw data on ssd
+fastq-dl -a PRJNA438294 --outdir PRJNA438294 --cpus 5 
+
