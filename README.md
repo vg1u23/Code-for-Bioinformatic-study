@@ -62,7 +62,24 @@ squeue -u "username"
 #check the environment for plugins
 conda info --env
 
+
+
 #download metadata and raw sequences
 #donwload in scratch, save raw data on ssd
 fastq-dl -a PRJNA438294 --outdir PRJNA438294 --cpus 5 
+
+#create a manifest file
+#use qiime2 import function
+
+qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' 
+--input-path import_manifest_cluster 
+--input-format PairedEndFastqManifestPhred33 
+--output-path /home/eo2r24/QIIME2_TomaSeed_Olimi/TomatoSeed1000_demux.qza
+
+#single reads
+qiime tools import \
+--type 'SampleData[SequencesWithQuality]' \
+--input-path plate_1_manifest_file.tsv \
+--output-path single-end-demux.qza \
+--input-format SingleEndFastqManifestPhred33V2
 
