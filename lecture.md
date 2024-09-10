@@ -73,3 +73,9 @@ sed -i -e '1 s/Feature/#Feature/' -e '1 s/Taxon/taxonomy/' taxa/taxonomy.tsv
 conda deactivate
 ```
 
+7. Activate Picrust2
+   
+```
+conda activate picrust2
+```
+
