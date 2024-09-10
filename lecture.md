@@ -50,6 +50,26 @@ biom convert \
   --to-tsv
 ```
 
+Then we can export the sequences file:
 
+```
+qiime tools export \
+  --input-path representative_sequences_final_filtered.qza \
+  --output-path exports_filtered
+```
 
+This will be exported as a .fasta file, which you can look at in the exports_filtered folder, if you like.
+Finally, we’ll export the taxa classifications that we have, we’ll slightly modify the resulting file, and then deactivate the conda environment:
+
+```
+qiime tools export \
+>   --input-path PRJEB40733_gg2.taxonomy.qza \
+>   --output-path taxa
+sed -i -e '1 s/Feature/#Feature/' -e '1 s/Taxon/taxonomy/' taxa/taxonomy.tsv
+```
+
+6. Deactivate conda environment
+```
+conda deactivate
+```
 
