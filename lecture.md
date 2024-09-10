@@ -37,3 +37,19 @@ qiime feature-table filter-seqs \
   ```
 
 
+Then we can export these files - first the feature table, which we’ll export and then convert from .biom format to .txt format:
+
+```
+qiime tools export \
+  --input-path final_table_filtered.qza \
+  --output-path exports_filtered
+  
+biom convert \
+  -i exports_filtered/feature-table.biom \
+  -o exports_filtered/feature-table.txt \
+  --to-tsv
+```
+
+
+
+
