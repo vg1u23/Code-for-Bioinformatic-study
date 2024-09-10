@@ -20,9 +20,7 @@ conda activate qiime2-amplicon-2024.2
    --i-table direction/filename.qza \
    --p-min-frequency 50 \
    --p-min-samples 2 \
-   --o-filtered-table final_table_filtered.qza
-  
-  ```
+   --o-filtered-table final_table_filtered.qza ```
 
 description:
 --p-min-frequency command filters out features that have fewer than 50 counts across all samples. Features that occurs less than 50 times will be retained.
