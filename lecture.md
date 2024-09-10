@@ -90,3 +90,24 @@ conda activate picrust2
 ```
 
 
+USE R FOR DOWNSTREAM ANALYSIS
+
+9. Start R with R Studio
+    
+11. Set working directory
+
+First check in which working directory you are in
+```
+getwd()
+```
+
+Set the working directory to the folder containing all of the information
+For example: setwd(C:/Users/vg1u23/OneDrive - University of Southampton/Desktop/Picrust_20_08_2024)
+
+```
+setwd()
+
+``
+
+
+
