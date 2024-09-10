@@ -29,3 +29,13 @@ description:
 --p-min-sample: filters out features that appear in fewer than 2 samples
 
 
+FILTER: Now we’ll filter the sequences to only include those that are in our new filtered table (final_table_filtered.qza):
+
+```
+qiime feature-table filter-seqs \
+  --i-data PRJEB40733_10s-rep-seqs.qza \
+  --i-table final_table_filtered.qza \
+  --o-filtered-data  representative_sequences_final_filtered.qza
+  ```
+
+
