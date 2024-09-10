@@ -90,6 +90,13 @@ conda activate picrust2
 ```
 
 
+
+
+
+
+
+
+
 USE R FOR DOWNSTREAM ANALYSIS
 
 9. Start R with R Studio
@@ -170,6 +177,38 @@ for (pkg in pkgs) {
 ```
 
 
+14. Read in the pathway table to R
+    ```
+    pwy_table <- read.csv(paste("picrust2_out_pipeline/pathways_out/path_abun_unstrat.tsv/path_abun_unstrat.tsv", sep=""), sep='\t', header=T, check.names=FALSE)
+    ```
+  Note: check.names=FALSE, prevents R from automatically modifying column and row names
 
+15. Have a look at the table by calling it
+```
+pwy_table
+``
+Regarding the pathway table: you see a table with the annotated pathway or pathway ID, samplename as well as the pathway abundance in each sample
+
+To investigate the table:
+```
+dim(pwy_table) #columns and rows
+str(pwy_table) #structure of the table
+head(pwy_table) #shows the first 6 rows of the table
+tail(pwy_table) #shows the last 6 rows of the table
+ncol(pwy_table) #columns
+nrow(pwy_table) #rows
+```
+
+16. Manipulation of the table
+pwy_table_num = data.matrix(pwy_table[,2:25]) #convert the ASV table to a numeric matrix
+rownames(pwy_table_num) = pwy_table[,1] #give the matrix row names
+
+17. Read in the metadata into R, sep='\t' specifies that it is tab separated
+```
+metadata <- read.csv(paste("metadata.tsv", sep=""), sep='\t', check.names=FALSE)
+```
+
+Note: checknames FALSE is quite important if your sampleIDs start with numbers
+In general R would modify the columns by putting an X infront of the ID, if this happens the phyloseq object wont work
 
 
