@@ -107,7 +107,69 @@ For example: setwd(C:/Users/vg1u23/OneDrive - University of Southampton/Desktop/
 ```
 setwd()
 
-``
+```
+
+12. Install all the packages
+
+First, ensure BiocManager is installed, if BiocManager is already installed, the code silently does nothing and moves on to the next lines of the script
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager")
+}
+
+To install the latest development version of ggpiscrust2 from GitHub               
+Install the devtools package if not already installed  
+```
+install.packages("devtools")
+```              
+
+Install ggpicrust2 from GitHub  
+
+```
+devtools::install_github("cafferychen777/ggpicrust2")
+```
+
+Load BiocManager and use a for loop to install all the packages
+```
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+pkgs <- c("phyloseq", "ALDEx2", "SummarizedExperiment", "Biobase", "devtools", 
+          "ComplexHeatmap", "BiocGenerics", "BiocManager", "metagenomeSeq", 
+          "Maaslin2", "edgeR", "lefser", "limma", "KEGGREST", "DESeq2")
+
+for (pkg in pkgs) {
+  if (!requireNamespace(pkg, quietly = TRUE))
+    BiocManager::install(pkg)
+}
+```
+
+
+
+
+
+
+13. Load packages
+```
+  library(phyloseq)
+  library(ggplot2)
+  library(phyloseq)
+  library(ALDEx2)
+  library(SummarizedExperiment)
+  library(Biobase)
+  library(devtools)
+  library(ComplexHeatmap)
+  library(BiocGenerics)
+  library(BiocManager)
+  library(metagenomeSeq)
+  library(Maaslin2)
+  library(edgeR)
+  library(lefser)
+  library(limma)
+  library(KEGGREST)
+  library(DESeq2)
+```
+
+
 
 
 
