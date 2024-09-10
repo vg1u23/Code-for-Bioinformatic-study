@@ -79,3 +79,14 @@ conda deactivate
 conda activate picrust2
 ```
 
+8. Run the whole Picrust2 pipeline
+```
+   picrust2_pipeline.py \
+  -s exports_filtered/dna-sequences.fasta \
+  -i exports_filtered/feature-table.biom \
+  -o picrust2_out_pipeline_filtered \
+  -p 4 \
+  -t sepp
+```
+
+
