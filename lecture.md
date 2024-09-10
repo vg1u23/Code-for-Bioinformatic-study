@@ -106,16 +106,16 @@ For example: setwd(C:/Users/vg1u23/OneDrive - University of Southampton/Desktop/
 
 ```
 setwd()
-
 ```
 
 12. Install all the packages
 
 First, ensure BiocManager is installed, if BiocManager is already installed, the code silently does nothing and moves on to the next lines of the script
+```
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
   install.packages("BiocManager")
 }
-
+```
 To install the latest development version of ggpiscrust2 from GitHub               
 Install the devtools package if not already installed  
 ```
