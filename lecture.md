@@ -27,7 +27,7 @@ description:
 --p-min-sample: filters out features that appear in fewer than 2 samples
 
 
-FILTER: Now we’ll filter the sequences to only include those that are in our new filtered table (final_table_filtered.qza):
+ 4. FILTER: Now we’ll filter the sequences to only include those that are in our new filtered table (final_table_filtered.qza):
 
 ```
 qiime feature-table filter-seqs \
@@ -37,7 +37,7 @@ qiime feature-table filter-seqs \
   ```
 
 
-Then we can export these files - first the feature table, which we’ll export and then convert from .biom format to .txt format:
+5. Exporting: Then we can export these files - first the feature table, which we’ll export and then convert from .biom format to .txt format:
 
 ```
 qiime tools export \
