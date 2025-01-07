@@ -83,3 +83,31 @@ qiime tools import \
 --output-path single-end-demux.qza \
 --input-format SingleEndFastqManifestPhred33V2
 
+
+Naive Bayes Classifier: 
+A pre-trained classifier was downloaded from the website: https://github.com/qiime2/resources/blob/main/index.md with the download link: https://data.qiime2.org/classifiers/sklearn-1.4.2/silva/silva-138-99-nb-classifier.qza. 
+Full 16S backbone will be used in order to analyse datasets based on different primers/16S regions.
+Details: 
+:header: **Silva 138 99% OTUs full-length sequences**
+**Download**: [Silva 138 99% OTUs full-length sequences](https://data.qiime2.org/classifiers/sklearn-1.4.2/silva/silva-138-99-nb-classifier.qza)\
+**UUID**: 70b4b5f4-8fce-40bd-b508-afacbc12a5ed\
+**SHA256**: c08a1aa4d56b449b511f7215543a43249ae9c54b57491428a7e5548a62613616\
+**Sklearn Version**: 1.4.2\
+**Date Trained**: 2024-05-30\
+**Notes**: [Silva species taxonomy may be unreliable](#Silva)\
+**Citations**: @Robeson2020-ax, @Bokulich2018-yb, [Silva](#Silva-Citations)
+
+Check: 
+Qiime version should be compatible with the classifier!
+Integrity of the file: After downloading the classifier the sha256 sum of the classifier using the command shasum -a 256 <path-to-classifier>  should be checked. The output should match the SHA256 value associated with the classifier on the website. IF it does
+not match do not use the classifier and re-download it from the website. 
+Note: Shasum is not a built in command in powershell. Use the command:  "Get-FileHash -Algorithm SHA256 "C:\Users\vg1u23\Downloads\silva-138-99-nb-classifier.qza"" instead.
+output
+Algorithm       Hash                                                                   Path
+---------       ----                                                                   ----
+SHA256          C08A1AA4D56B449B511F7215543A43249AE9C54B57491428A7E5548A62613616       C:\Users\vg1u23\Downloads\sil...
+They DO match!!!!
+
+Consideration:  Check some small dataset (of each 16S region v1-v3, v3-v4, v4 and v5-v7) with both the 16S full backbone pre-trained classifier and a trained one on the specific region. 
+Compare the results. Is there any change? 
+
