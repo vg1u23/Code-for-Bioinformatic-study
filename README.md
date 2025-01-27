@@ -111,3 +111,6 @@ They DO match!!!!
 Consideration:  Check some small dataset (of each 16S region v1-v3, v3-v4, v4 and v5-v7) with both the 16S full backbone pre-trained classifier and a trained one on the specific region. 
 Compare the results. Is there any change? 
 
+
+#strategy change from paired only to single end (both paired and single end studies are included. However, only forward reads are processed.)
+
