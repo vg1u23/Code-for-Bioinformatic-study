@@ -180,4 +180,5 @@ check again: only _1 should be there
 considering studyID PRJNA529046: 
 the fastq files without ending are single end. only _2 reverse reads were deleted.
 
+The study ID 358488 is not interleaved!!!! folder was removed and redownloaded.
 
