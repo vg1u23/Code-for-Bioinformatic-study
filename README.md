@@ -177,5 +177,7 @@ use the delete function again:
 find . -maxdepth 1 -type f -name "*.fastq.gz" ! -name "*_1.fastq.gz" -delete
 check again: only _1 should be there
 
+considering studyID PRJNA529046: 
+the fastq files without ending are single end. only _2 reverse reads were deleted.
 
 
