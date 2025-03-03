@@ -182,3 +182,17 @@ the fastq files without ending are single end. only _2 reverse reads were delete
 
 The study ID 358488 is not interleaved!!!! folder was removed and redownloaded.
 
+additional studies for Amaranthaceae were added: 
+PRJEB77602
+PRJNA112950
+PRJNA664311
+
+Moreover, multi qc and fastqc was used on the data: 
+fastqc *.fastq.gz -o fastqc_output
+multiqc fastqc_output/ -o multiqc_output
+
+
+Primer check: 
+zgrep was used and cutadapt: cosidering study PRJEB31125
+cutadapt -g GTGYCAGCMGCCGCGGTAA --report=minimal -o /dev/null ERR3224035.fastq.gz
+zgrep -E "GTG[CT]CAGC[AC]GCCGCGGTAA" ERR3224035.fastq.gz
