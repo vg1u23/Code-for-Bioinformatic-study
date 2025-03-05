@@ -1,17 +1,15 @@
+#Installation of programmes
+
+snakemake - choose minimal version
+
+```
+conda create -c conda-forge -c bioconda -n snakemake snakemake-minimal
 ```
 
-test for codeblock
 
+#Install qiime2-2023.5 - needed as it only supports snakemake
 ```
-
-jdflfj7sfdfds
-sdf
-dfsfd
-df
-df
-dfd
-ffd
-sf
-dsf
-df
-f
+wget https://data.qiime2.org/distro/core/qiime2-2023.5-py38-linux-conda.yml
+conda env create -n qiime2-2023.5 --file qiime2-2023.5-py38-linux-conda.yml
+conda activate qiime2-2023.5
+```
