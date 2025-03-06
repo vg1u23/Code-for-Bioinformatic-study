@@ -13,3 +13,25 @@ wget https://data.qiime2.org/distro/core/qiime2-2023.5-py38-linux-conda.yml
 conda env create -n qiime2-2023.5 --file qiime2-2023.5-py38-linux-conda.yml
 conda activate qiime2-2023.5
 ```
+#Activate the qiime2-2023.5 environment and install the other Conda- or PIP-installable dependencies:
+conda activate qiime2-2023.5
+conda install -c conda-forge -c bioconda biopython muscle clustalo tabulate
+conda install -c conda-forge deicode
+pip install empress
+qiime dev refresh-cache
+conda install -c bioconda bioconductor-msa bioconductor-odseq
+
+
+#set up docker
+
+To run Tourmaline inside a Docker container:
+Install Docker Desktop (Mac, Windows, or Linux) from Docker.com.
+Open Docker app.
+Increase the memory to 8 GB or more (Preferences -> Resources -> Advanced -> Memory). - note: does not work anymore, create a config file on windows following this tutorial: 
+https://mrakelinggar.medium.com/set-up-configs-like-memory-limits-in-docker-for-windows-and-wsl2-80689997309c
+
+Download the Docker image from DockerHub (command below).
+Run the Docker image (command below).
+
+docker pull aomlomics/tourmaline
+docker run -v $HOME:/data -it aomlomics/tourmaline
