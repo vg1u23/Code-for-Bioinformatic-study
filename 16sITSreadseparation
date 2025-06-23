@@ -1,0 +1,51 @@
+use seqkit for primer search and split the reads up into separate fastq files between 16S and ITS
+
+```
+```
+for f in *_1.fastq.gz; do
+    sample="${f%_1.fastq.gz}"
+    echo "🔍 Processing $f"
+
+    # Extract 16S reads (match anywhere, degenerate-aware)
+    seqkit grep -s -i -d -p GTGCCAGCMGCCGCGGTAA "$f" -o "${sample}_16S.fastq.gz"
+
+    # Extract ITS reads (match anywhere, degenerate-aware)
+    seqkit grep -s -i -d -p CTTGGTCATTTAGAGGAAGTAA "$f" -o "${sample}_ITS.fastq.gz"
+
+    # Count reads
+    n_16S=$(zcat "${sample}_16S.fastq.gz" 2>/dev/null | awk 'END {print NR/4}')
+    n_ITS=$(zcat "${sample}_ITS.fastq.gz" 2>/dev/null | awk 'END {print NR/4}')
+
+    echo "✅ ${sample}: 16S = ${n_16S}, ITS = ${n_ITS} reads"
+done
+```
+```
+
+
+use cutadapt to trim primers of: 
+```
+```
+for f in *_16S.fastq.gz; do
+    sample=$(basename "$f" _16S.fastq.gz)
+    echo "🔧 Trimming forward primer from $f..."
+
+    cutadapt \
+        -g GTGCCAGCMGCCGCGGTAA \
+        -o trimmed_16S/${sample}_16S_trimmed.fastq.gz \
+        "$f" > trimmed_16S/${sample}_cutadapt.log
+
+    echo "✅ Saved: trimmed_16S/${sample}_16S_trimmed.fastq.gz"
+done
+(cutadapt) [vg1u23@login6003 PRJNA589539]$
+(cutadapt) [vg1u23@login6003 PRJNA589539]$ for f in *_16S.fastq.gz; do
+>     sample=$(basename "$f" _16S.fastq.gz)
+>     echo "🔧 Trimming forward primer from $f..."
+>
+>     cutadapt \
+>         -g GTGCCAGCMGCCGCGGTAA \
+>         -o trimmed_16S/${sample}_16S_trimmed.fastq.gz \
+>         "$f" > trimmed_16S/${sample}_cutadapt.log
+>
+>     echo "✅ Saved: trimmed_16S/${sample}_16S_trimmed.fastq.gz"
+```
+``` 
