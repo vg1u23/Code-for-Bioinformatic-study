@@ -21,7 +21,7 @@ done
 ```
 ```
 
-
+mkdir 16_S
 use cutadapt to trim primers of: 
 ```
 ```
@@ -36,16 +36,3 @@ for f in *_16S.fastq.gz; do
 
     echo "✅ Saved: trimmed_16S/${sample}_16S_trimmed.fastq.gz"
 done
-(cutadapt) [vg1u23@login6003 PRJNA589539]$
-(cutadapt) [vg1u23@login6003 PRJNA589539]$ for f in *_16S.fastq.gz; do
->     sample=$(basename "$f" _16S.fastq.gz)
->     echo "🔧 Trimming forward primer from $f..."
->
->     cutadapt \
->         -g GTGCCAGCMGCCGCGGTAA \
->         -o trimmed_16S/${sample}_16S_trimmed.fastq.gz \
->         "$f" > trimmed_16S/${sample}_cutadapt.log
->
->     echo "✅ Saved: trimmed_16S/${sample}_16S_trimmed.fastq.gz"
-```
-``` 
